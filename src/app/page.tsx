@@ -1,15 +1,12 @@
 import { Container } from "@/components/Container";
 import { Hero } from "@/components/Hero";
+import { HomePlaceholders } from "@/components/HomePlaceholders";
 
 export default function HomePage() {
   return (
-    <Container className="space-y-24 pb-20">
+    <Container>
       <Hero />
-
-      <section id="about" className="h-20" aria-hidden="true" />
-      <section id="projects" className="h-20" aria-hidden="true" />
-      <section id="experience" className="h-20" aria-hidden="true" />
-      <section id="contact" className="h-20" aria-hidden="true" />
+      <HomePlaceholders />
     </Container>
   );
 }

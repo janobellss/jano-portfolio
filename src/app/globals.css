@@ -3,21 +3,31 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f4f7fc;
-  --foreground: #0f172a;
-  --primary: #1e3a8a;
-  --primary-foreground: #eff6ff;
-  --muted: #e2e8f0;
+  --background: #f7f9fc;
+  --foreground: #0d1321;
+  --primary: #2563eb;
+  --primary-foreground: #f8fbff;
+  --muted: #e8edf5;
+  --surface: #ffffff;
   --border: #cbd5e1;
+  --ring: #2563eb;
+  --glow-primary: rgba(37, 99, 235, 0.2);
+  --glow-secondary: rgba(20, 184, 166, 0.15);
+  --grid-line: rgba(15, 23, 42, 0.08);
 }
 
 .dark {
-  --background: #050b18;
-  --foreground: #dbeafe;
-  --primary: #60a5fa;
-  --primary-foreground: #0a1020;
-  --muted: #13213d;
-  --border: #25324e;
+  --background: #070a12;
+  --foreground: #e8edf7;
+  --primary: #7dd3fc;
+  --primary-foreground: #04111d;
+  --muted: #121827;
+  --surface: #0d1321;
+  --border: #283244;
+  --ring: #7dd3fc;
+  --glow-primary: rgba(125, 211, 252, 0.16);
+  --glow-secondary: rgba(52, 211, 153, 0.12);
+  --grid-line: rgba(226, 232, 240, 0.07);
 }
 
 @theme inline {
@@ -26,7 +36,9 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-muted: var(--muted);
+  --color-surface: var(--surface);
   --color-border: var(--border);
+  --color-ring: var(--ring);
 }
 
 * {
@@ -40,6 +52,18 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--primary) 26%, transparent);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
 }
 
 .transition-theme {
