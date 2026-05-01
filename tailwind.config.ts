@@ -9,8 +9,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
+        "primary-foreground": "var(--primary-foreground)",
         muted: "var(--muted)",
+        surface: "var(--surface)",
         border: "var(--border)",
+        ring: "var(--ring)",
       },
       transitionDuration: {
         DEFAULT: "250ms",
